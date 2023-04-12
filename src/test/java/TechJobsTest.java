@@ -34,7 +34,8 @@ public class TechJobsTest {
 
     private static String getFileContents(String fileName) throws IOException {
         Path path = FileSystems.getDefault().getPath(fileName);
-        return Files.readString(path);
+        String contents = Files.readString(path).replaceAll("\r", "");
+        return contents;
     }
 
     @Test
